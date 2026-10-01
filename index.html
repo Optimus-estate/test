@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>OPTIMUS ESTATE — Эксклюзивная недвижимость на побережье Болгарии</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#FAF7F2;color:#1a1a1a}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#A8813F}
+.h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,46px);font-weight:600;color:#1C2B4B;line-height:1.05;margin-top:8px}
+.ico{stroke:#C9A24B;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:20;background:rgba(250,247,242,.96);backdrop-filter:blur(6px);border-bottom:1px solid #EDE7DC}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:76px}
+.nav-logo img{height:56px;width:auto}
+.nav-links{display:flex;gap:28px}
+.nav-links a{font-size:14px;font-weight:500;color:#1C2B4B}
+.nav-links a:hover{color:#A8813F}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:600;padding:14px 22px;border-radius:6px;border:1.5px solid transparent;transition:background .15s,color .15s,border-color .15s;white-space:nowrap}
+.btn-gold{background:#C9A24B;color:#1C2B4B;border-color:#C9A24B}
+.btn-gold:hover{background:#b8913a;border-color:#b8913a}
+.btn-navy{background:#1C2B4B;color:#fff;border-color:#1C2B4B}
+.btn-navy:hover{background:#273a63;border-color:#273a63}
+.btn-line{background:#fff;color:#1C2B4B;border-color:#C9CED8}
+.btn-line:hover{border-color:#1C2B4B}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.btn-sm{font-size:13px;padding:11px 14px}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:520px;max-width:1440px;margin:0 auto}
+.hero-text{padding:64px 48px 64px max(32px,calc((100vw - 1200px)/2 + 32px));display:flex;flex-direction:column;justify-content:center}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5vw,64px);font-weight:600;line-height:1;color:#1C2B4B;margin-top:16px}
+.hero p{font-size:17px;line-height:1.6;color:#3d4556;margin-top:22px;max-width:480px}
+.hero p b{color:#1C2B4B}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero-img{background:url('hero-bg.jpg') center/cover no-repeat;border-bottom-left-radius:4px;min-height:320px}
+
+/* USP */
+.usp{background:#fff;border-top:1px solid #EDE7DC;border-bottom:1px solid #EDE7DC}
+.usp .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.usp-item{display:flex;gap:14px;padding:26px 20px;border-left:1px solid #EDE7DC}
+.usp-item:first-child{border-left:none;padding-left:0}
+.usp-item svg{width:34px;height:34px;flex-shrink:0}
+.usp-t{font-size:15px;font-weight:700;color:#1C2B4B;line-height:1.3}
+.usp-s{font-size:13px;color:#5b6273;line-height:1.45;margin-top:4px}
+
+/* SECTIONS */
+.section{padding:72px 0 0}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:28px}
+.link-arrow{font-size:14px;font-weight:600;color:#1C2B4B;border-bottom:1.5px solid #C9A24B;padding-bottom:3px}
+
+/* CARDS */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 2px rgba(28,43,75,.06),0 6px 20px rgba(28,43,75,.06);display:flex;flex-direction:column}
+.card-img{height:200px;object-fit:cover;width:100%}
+.card-body{padding:20px 20px 20px;display:flex;flex-direction:column;gap:14px;flex:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.card-name{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:#1C2B4B;line-height:1;display:flex;align-items:center;gap:8px}
+.card-name a{display:flex}
+.card-loc{display:flex;align-items:center;gap:5px;font-size:13px;color:#5b6273;margin-top:6px}
+.badge{display:flex;align-items:center;gap:8px;border-radius:8px;padding:7px 11px;flex-shrink:0;max-width:150px}
+.badge svg{width:20px;height:20px;flex-shrink:0}
+.badge span{font-size:12px;font-weight:700;line-height:1.25}
+.badge.top{background:#F6EEDC}
+.badge.top span{color:#7a5a1e}
+.badge.in{background:#E8ECF4}
+.badge.in span{color:#1C2B4B}
+.badge.in svg{stroke:#1C2B4B}
+.feats{list-style:none;display:flex;flex-direction:column;gap:7px}
+.feats li{display:flex;gap:9px;font-size:14px;color:#2b3140;line-height:1.4}
+.feats li::before{content:'';width:6px;height:6px;border-radius:50%;background:#C9A24B;margin-top:7px;flex-shrink:0}
+.fee{display:flex;justify-content:space-between;gap:12px;font-size:13px;padding-top:12px;border-top:1px solid #EDE7DC;margin-top:auto}
+.fee-k{color:#6b6f7a}
+.fee-v{color:#1C2B4B;font-weight:600;text-align:right}
+.card-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.card-btns.one{grid-template-columns:1fr}
+
+/* TOOLS */
+.tools{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.tool{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 2px rgba(28,43,75,.06),0 6px 20px rgba(28,43,75,.06);display:flex;flex-direction:column}
+.tool-head{display:flex;gap:14px;padding:22px 20px 18px;flex:1}
+.tool-head svg{width:38px;height:38px;flex-shrink:0}
+.tool-t{font-size:16px;font-weight:700;color:#1C2B4B;line-height:1.3}
+.tool-s{font-size:13px;color:#5b6273;line-height:1.45;margin-top:6px}
+.tool-chip{display:inline-block;margin-top:10px;font-size:11px;font-weight:700;letter-spacing:.4px;color:#7a5a1e;background:#F6EEDC;padding:3px 8px;border-radius:20px}
+.ph{height:150px;margin:0 12px 12px;border-radius:6px;border:1.5px dashed #D8CDB8;background:repeating-linear-gradient(135deg,#F4EFE6 0 10px,#EFE8DC 10px 20px);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:#8a7a5c;text-align:center;padding:10px}
+
+/* PROCESS */
+.steps{display:grid;grid-template-columns:repeat(7,1fr);gap:16px;position:relative}
+.steps::before{content:'';position:absolute;top:24px;left:24px;right:24px;height:1px;background:#D8CDB8}
+.step{position:relative;display:flex;flex-direction:column;gap:12px}
+.step-c{width:48px;height:48px;border-radius:50%;background:#FAF7F2;border:1.5px solid #C9A24B;display:flex;align-items:center;justify-content:center;position:relative}
+.step-c svg{width:20px;height:20px}
+.step-n{font-size:12px;font-weight:800;color:#A8813F;letter-spacing:1px}
+.step-t{font-size:15px;font-weight:700;color:#1C2B4B;line-height:1.3}
+.step-s{font-size:13px;color:#5b6273;line-height:1.45}
+.step.new .step-c{background:#1C2B4B;border-color:#1C2B4B}
+.step.new .step-n{color:#1C2B4B;background:#C9A24B;align-self:flex-start;padding:2px 7px;border-radius:3px;font-size:11px}
+
+/* CTA */
+.cta{margin-top:80px;background:linear-gradient(90deg,rgba(18,29,52,.96) 0%,rgba(18,29,52,.88) 55%,rgba(18,29,52,.6) 100%),url('cta-bg.jpg') center/cover no-repeat;color:#fff}
+.cta .wrap{display:grid;grid-template-columns:1.4fr auto auto;gap:40px;align-items:center;padding-top:56px;padding-bottom:56px}
+.cta .eyebrow{color:#E2C27E}
+.cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,3.6vw,44px);font-weight:600;line-height:1.1;margin-top:10px}
+.cta p{font-size:16px;line-height:1.6;color:#DCE0E8;margin-top:14px;max-width:560px}
+.cta-btns{display:flex;flex-direction:column;gap:12px}
+.qr{display:flex;flex-direction:column;align-items:center;gap:8px}
+.qr img{width:104px;height:104px;background:#fff;padding:6px;border-radius:4px}
+.qr span{font-size:11px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:#DCE0E8}
+
+/* FOOTER */
+.footer{background:#fff;border-top:1px solid #EDE7DC}
+.footer .wrap{display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:32px;padding-top:40px;padding-bottom:32px}
+.f-logo img{height:56px;width:auto}
+.f-tag{font-size:13px;color:#5b6273;line-height:1.5;margin-top:12px;max-width:240px}
+.person{display:flex;gap:14px}
+.avatar{width:48px;height:48px;border-radius:50%;background:#1C2B4B;color:#E2C27E;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.p-name{font-size:15px;font-weight:700;color:#1C2B4B}
+.p-phone{display:block;font-size:14px;color:#2b3140;margin-top:4px}
+.msgs{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.msg{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#1C2B4B;border:1px solid #D8DCE4;border-radius:20px;padding:5px 11px 5px 8px}
+.msg:hover{border-color:#C9A24B}
+.msg i{width:8px;height:8px;border-radius:50%}
+.f-list{display:flex;flex-direction:column;gap:12px}
+.f-row{display:flex;gap:10px;align-items:center;font-size:14px;color:#2b3140}
+.f-row svg{width:16px;height:16px;flex-shrink:0}
+.f-row a:hover{color:#A8813F}
+.f-bottom{border-top:1px solid #EDE7DC}
+.f-bottom .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:18px;padding-bottom:18px;font-size:12px;color:#6b6f7a}
+
+@media(max-width:1024px){
+  .nav-links{display:none}
+  .usp .wrap{grid-template-columns:1fr 1fr}
+  .usp-item{border-left:none;padding-left:0}
+  .grid{grid-template-columns:1fr 1fr}
+  .tools{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:repeat(4,1fr);row-gap:32px}
+  .steps::before{display:none}
+  .cta .wrap{grid-template-columns:1fr auto}
+  .qr{display:none}
+  .footer .wrap{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  .wrap{padding:0 18px}
+  .nav .wrap{height:64px}
+  .nav-logo img{height:44px}
+  .nav .btn{padding:10px 14px;font-size:13px}
+  .hero{grid-template-columns:1fr}
+  .hero-text{padding:40px 18px 32px}
+  .hero-img{min-height:260px;border-radius:0}
+  .usp .wrap{grid-template-columns:1fr}
+  .usp-item{padding:16px 0;border-top:1px solid #EDE7DC}
+  .usp-item:first-child{border-top:none}
+  .section{padding-top:52px}
+  .grid,.tools{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .cta .wrap{grid-template-columns:1fr;gap:24px;padding-top:40px;padding-bottom:40px}
+  .footer .wrap{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="#" class="nav-logo"><img src="logo.png" alt="OPTIMUS ESTATE"/></a>
+    <nav class="nav-links">
+      <a href="#objects">Комплексы</a>
+      <a href="#tools">Инструменты</a>
+      <a href="#how">Как мы работаем</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a href="form.html" class="btn btn-gold">Стать партнёром</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <div class="eyebrow">Только для партнёров · Эксклюзивные объекты</div>
+    <h1>Эксклюзивная недвижимость на побережье Болгарии</h1>
+    <p>Наши объекты доступны только через партнёров и не публикуются на открытых площадках (alo.bg и др.). <b>Клиент закрепляется за вами при первом осмотре.</b></p>
+    <div class="hero-actions">
+      <a href="#objects" class="btn btn-navy">Смотреть комплексы →</a>
+      <a href="form.html" class="btn btn-line">Стать партнёром</a>
+    </div>
+  </div>
+  <div class="hero-img" role="img" aria-label="Побережье Болгарии"></div>
+</section>
+
+<section class="usp">
+  <div class="wrap">
+    <div class="usp-item">
+      <svg class="ico" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v3"/></svg>
+      <div><div class="usp-t">Только через партнёров</div><div class="usp-s">Эксклюзивный доступ к объектам</div></div>
+    </div>
+    <div class="usp-item">
+      <svg class="ico" viewBox="0 0 24 24"><ellipse cx="10" cy="6" rx="6" ry="2.5"/><path d="M4 6v4c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5V6"/><path d="M4 10v4c0 1.4 2.7 2.5 6 2.5"/><ellipse cx="16" cy="15" rx="5" ry="2.2"/><path d="M11 15v3.5c0 1.2 2.2 2.2 5 2.2s5-1 5-2.2V15"/></svg>
+      <div><div class="usp-t">Прямые цены от застройщика</div><div class="usp-s">Без наценок и посредников</div></div>
+    </div>
+    <div class="usp-item">
+      <svg class="ico" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>
+      <div><div class="usp-t">Готовые документы</div><div class="usp-s">Полное юридическое сопровождение</div></div>
+    </div>
+    <div class="usp-item">
+      <svg class="ico" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14c2.2.6 3.5 2.9 3.5 6"/></svg>
+      <div><div class="usp-t">Защита комиссии</div><div class="usp-s">Клиент закреплён за вами</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="objects">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="eyebrow">Наши объекты</div><h2 class="h2">Комплексы и объекты</h2></div>
+      <a href="https://airtable.com/app4flQF8p47DvF7v/shr9xS2MU8pricfTu" target="_blank" class="link-arrow">Общий прайс →</a>
+    </div>
+    <div class="grid">
+
+      <article class="card">
+        <img src="apollon.jpg" alt="Аполлон — Равда" class="card-img" loading="lazy"/>
+        <div class="card-body">
+          <div class="card-top">
+            <div><div class="card-name">Аполлон</div><div class="card-loc"><svg class="ico" width="13" height="13" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Равда, Несебр</div></div>
+            <div class="badge top"><svg class="ico" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg><span>Комиссия сверху</span></div>
+          </div>
+          <ul class="feats"><li>Семейный комплекс у моря, тихий район</li><li>Отличный сезонный арендный спрос</li><li>Студии, 1, 2 и 3 спальни</li></ul>
+          <div class="fee"><span class="fee-k">Такса поддержки</span><span class="fee-v">Аполлон 2–6 — 11 €/м²<br>Аполлон 7–9, Несебр — 12 €/м²</span></div>
+          <div class="card-btns">
+            <a href="https://apollon-presentacion-ru.netlify.app/" target="_blank" class="btn btn-navy btn-sm">Презентация</a>
+            <a href="https://airtable.com/app4flQF8p47DvF7v/shrOfWUrVA1HO54K1/tbl56x9OZb7wZEV4W" target="_blank" class="btn btn-line btn-sm">Прайс</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="tarsis-hero2.png" alt="Тарсис — Солнечный берег" class="card-img" loading="lazy"/>
+        <div class="card-body">
+          <div class="card-top">
+            <div><div class="card-name">Тарсис</div><div class="card-loc"><svg class="ico" width="13" height="13" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Солнечный берег</div></div>
+            <div class="badge top"><svg class="ico" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg><span>Комиссия сверху</span></div>
+          </div>
+          <ul class="feats"><li>Курортный комплекс с высокой доходностью</li><li>Бассейны, рестораны, SPA, фитнес</li><li>Студии, 1 и 2 спальни</li></ul>
+          <div class="fee"><span class="fee-k">Такса поддержки</span><span class="fee-v">Тарсис и Тарсис Нова — 16,80 €/м²</span></div>
+          <div class="card-btns">
+            <a href="https://tarsis-presentacion-ru.netlify.app/" target="_blank" class="btn btn-navy btn-sm">Презентация</a>
+            <a href="https://airtable.com/app4flQF8p47DvF7v/shrA938t57aTDfK68/tbl56x9OZb7wZEV4W" target="_blank" class="btn btn-line btn-sm">Прайс</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="belleair.jpg" alt="Belle Air — Святой Влас" class="card-img" loading="lazy"/>
+        <div class="card-body">
+          <div class="card-top">
+            <div><div class="card-name">Belle Air <a href="https://www.instagram.com/belleair_svetivlas?utm_source=qr" target="_blank" title="Instagram"><svg class="ico" width="18" height="18" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".8" fill="#C9A24B"/></svg></a></div><div class="card-loc"><svg class="ico" width="13" height="13" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Святой Влас</div></div>
+            <div class="badge in"><svg class="ico" viewBox="0 0 24 24"><path d="M20 12l-8 8-9-9V3h8z"/><circle cx="7.5" cy="7.5" r="1.3"/></svg><span>10% в цене</span></div>
+          </div>
+          <ul class="feats"><li>Премиальный образ жизни</li><li>Качественное строительство</li><li>Спокойный и престижный район</li></ul>
+          <div class="fee"><span class="fee-k">Такса поддержки</span><span class="fee-v">9 €/м²</span></div>
+          <div class="card-btns">
+            <a href="https://svbelleair.netlify.app" target="_blank" class="btn btn-navy btn-sm">Презентация</a>
+            <a href="https://airtable.com/app4flQF8p47DvF7v/shrVvkghdvcsk604b/tbl56x9OZb7wZEV4W" target="_blank" class="btn btn-line btn-sm">Прайс</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="pomorie.png" alt="Pomorie Luxury Village" class="card-img" loading="lazy"/>
+        <div class="card-body">
+          <div class="card-top">
+            <div><div class="card-name">Pomorie <a href="https://www.instagram.com/pomorieluxuryvillage/" target="_blank" title="Instagram"><svg class="ico" width="18" height="18" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".8" fill="#C9A24B"/></svg></a></div><div class="card-loc"><svg class="ico" width="13" height="13" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Поморие · Luxury Village</div></div>
+            <div class="badge in"><svg class="ico" viewBox="0 0 24 24"><path d="M20 12l-8 8-9-9V3h8z"/><circle cx="7.5" cy="7.5" r="1.3"/></svg><span>3% в цене + сверху</span></div>
+          </div>
+          <ul class="feats"><li>Премиальные дома с собственными участками</li><li>Тихий и престижный район</li><li>Для круглогодичного проживания</li></ul>
+          <div class="fee"><span class="fee-k">Формат</span><span class="fee-v">Дома</span></div>
+          <div class="card-btns">
+            <a href="https://luxury-pomorie.netlify.app" target="_blank" class="btn btn-navy btn-sm">Презентация</a>
+            <a href="https://airtable.com/app4flQF8p47DvF7v/shrnfLx6VbdRji0tP" target="_blank" class="btn btn-line btn-sm">Прайс</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="centralpark.jpg" alt="Central Park — Бургас" class="card-img" loading="lazy"/>
+        <div class="card-body">
+          <div class="card-top">
+            <div><div class="card-name">Central Park</div><div class="card-loc"><svg class="ico" width="13" height="13" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Бургас</div></div>
+            <div class="badge top"><svg class="ico" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg><span>Комиссия сверху</span></div>
+          </div>
+          <ul class="feats"><li>Современный комплекс в развивающемся районе</li><li>Комфорт для жизни круглый год</li><li>Развитая инфраструктура рядом</li></ul>
+          <div class="fee"><span class="fee-k">Такса поддержки</span><span class="fee-v">4,2 €/м²</span></div>
+          <div class="card-btns">
+            <a href="https://optimus-estate.github.io/central-park.ru/" target="_blank" class="btn btn-navy btn-sm">Презентация</a>
+            <a href="https://airtable.com/app4flQF8p47DvF7v/shrvIqf8UItHoXTLd/tbl56x9OZb7wZEV4W" target="_blank" class="btn btn-line btn-sm">Прайс</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="secondary.jpg" alt="Вторичный рынок" class="card-img" loading="lazy"/>
+        <div class="card-body">
+          <div class="card-top">
+            <div><div class="card-name">Вторичный рынок</div><div class="card-loc"><svg class="ico" width="13" height="13" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Разные локации побережья</div></div>
+            <div class="badge top"><svg class="ico" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg><span>Комиссия сверху</span></div>
+          </div>
+          <ul class="feats"><li>Готовые апартаменты в курортных локациях</li><li>Подходит для отдыха и аренды</li><li>Студии и апартаменты разных форматов</li></ul>
+          <div class="fee"><span class="fee-k">Готовность</span><span class="fee-v">Готовые объекты</span></div>
+          <div class="card-btns one">
+            <a href="https://airtable.com/app4flQF8p47DvF7v/shrN6cqfIJZFu7txU/tbl56x9OZb7wZEV4W" target="_blank" class="btn btn-navy btn-sm">Прайс</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="tools">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="eyebrow">Дополнительные возможности</div><h2 class="h2">Инструменты для ваших продаж</h2></div>
+    </div>
+    <div class="tools">
+      <div class="tool">
+        <div class="tool-head">
+          <svg class="ico" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg>
+          <div><div class="tool-t">Гарантированная аренда</div><div class="tool-s">Фиксированный доход по договору — снимает возражение «а окупится ли?»</div><span class="tool-chip">Тарсис · Belle Air</span></div>
+        </div>
+        <div class="ph">Фото: гарантированная аренда</div>
+      </div>
+      <div class="tool">
+        <div class="tool-head">
+          <svg class="ico" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+          <div><div class="tool-t">Управление арендой</div><div class="tool-s">Полный сервис и отчёты — клиенту не нужно быть на месте</div><span class="tool-chip">Все объекты</span></div>
+        </div>
+        <div class="ph">Фото: управление арендой</div>
+      </div>
+      <div class="tool">
+        <div class="tool-head">
+          <svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="14" height="6" rx="1"/><path d="M17 6h3v5h-8v3"/><rect x="10" y="14" width="4" height="7" rx="1"/></svg>
+          <div><div class="tool-t">Ремонт и меблировка</div><div class="tool-s">Готовые решения под ключ — квартира сразу готова к жизни или сдаче</div><span class="tool-chip">По запросу</span></div>
+        </div>
+        <div class="ph">Фото: ремонт и меблировка</div>
+      </div>
+      <div class="tool">
+        <div class="tool-head">
+          <svg class="ico" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>
+          <div><div class="tool-t">Юридическое сопровождение</div><div class="tool-s">Проверка, подготовка документов и сопровождение сделки</div><span class="tool-chip">Все объекты</span></div>
+        </div>
+        <div class="ph">Фото: юридическое сопровождение</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="eyebrow">Простой и прозрачный процесс</div><h2 class="h2">Как мы работаем с партнёрами</h2></div>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-c"><svg class="ico" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div><span class="step-n">01</span><div class="step-t">Связываетесь с нами</div><div class="step-s">Оставляете запрос на сотрудничество</div></div>
+      <div class="step"><div class="step-c"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h8"/></svg></div><span class="step-n">02</span><div class="step-t">Получаете наличие</div><div class="step-s">Актуальные цены, прайсы и презентации</div></div>
+      <div class="step"><div class="step-c"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div><span class="step-n">03</span><div class="step-t">Подбираете объект</div><div class="step-s">Под запрос вашего клиента</div></div>
+      <div class="step"><div class="step-c"><svg class="ico" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 15l2 2 4-4"/></svg></div><span class="step-n">04</span><div class="step-t">Бронь и юрист</div><div class="step-s">Бронирование и юридическое сопровождение</div></div>
+      <div class="step"><div class="step-c"><svg class="ico" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><span class="step-n">05</span><div class="step-t">Сделка</div><div class="step-s">С гарантированной защитой вашей комиссии</div></div>
+      <div class="step new"><div class="step-c"><svg class="ico" viewBox="0 0 24 24" style="stroke:#E2C27E"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg></div><span class="step-n">06 · Новое</span><div class="step-t">Ремонт и аренда</div><div class="step-s">Сопровождаем клиента после сделки</div></div>
+      <div class="step"><div class="step-c"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M5 12v9h14v-9"/><path d="M12 8c-1.5-3-5-4-5-1.5S10 8 12 8zM12 8c1.5-3 5-4 5-1.5S14 8 12 8z"/></svg></div><span class="step-n">07</span><div class="step-t">Бонусы</div><div class="step-s">Бонусная программа для партнёров</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Партнёрство, которое открывает возможности</div>
+      <h2>Хотите работать с нами как партнёр?</h2>
+      <p>Получите доступ к эксклюзивным предложениям, прямым ценам и полной поддержке на всех этапах сделки.</p>
+    </div>
+    <div class="cta-btns">
+      <a href="form.html" class="btn btn-gold">Стать партнёром →</a>
+      <a href="https://youtu.be/vjC142aE-5o" target="_blank" class="btn btn-ghost">▶ Видео о компании</a>
+    </div>
+    <div class="qr"><img src="qr.png" alt="QR-код на видео"/><span>Видео по QR</span></div>
+  </div>
+</section>
+
+<footer class="footer" id="contacts">
+  <div class="wrap">
+    <div>
+      <div class="f-logo"><img src="logo.png" alt="OPTIMUS ESTATE"/></div>
+      <p class="f-tag">Инвестиционная компания. Эксклюзивная недвижимость на побережье Болгарии.</p>
+    </div>
+    <div class="person">
+      <div class="avatar">А</div>
+      <div>
+        <div class="p-name">Александр</div>
+        <a href="tel:+359877692546" class="p-phone">+359 87 769 25 46</a>
+        <div class="msgs">
+          <a class="msg" href="https://wa.me/359877692546" target="_blank"><i style="background:#25D366"></i>WhatsApp</a>
+          <a class="msg" href="viber://chat?number=%2B359877692546"><i style="background:#7360F2"></i>Viber</a>
+          <a class="msg" href="https://t.me/+359877692546" target="_blank"><i style="background:#2AABEE"></i>Telegram</a>
+        </div>
+      </div>
+    </div>
+    <div class="person">
+      <div class="avatar">В</div>
+      <div>
+        <div class="p-name">Василий</div>
+        <a href="tel:+359895176685" class="p-phone">+359 89 517 66 85</a>
+        <div class="msgs">
+          <a class="msg" href="https://wa.me/359895176685" target="_blank"><i style="background:#25D366"></i>WhatsApp</a>
+          <a class="msg" href="viber://chat?number=%2B359895176685"><i style="background:#7360F2"></i>Viber</a>
+          <a class="msg" href="https://t.me/+359895176685" target="_blank"><i style="background:#2AABEE"></i>Telegram</a>
+        </div>
+      </div>
+    </div>
+    <div class="f-list">
+      <div class="f-row"><svg class="ico" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg><a href="mailto:optimusbg@mail.ru">optimusbg@mail.ru</a></div>
+      <div class="f-row"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg><a href="https://bolgarskidom.com" target="_blank">bolgarskidom.com</a></div>
+      <div class="f-row"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".8" fill="#C9A24B"/></svg><a href="https://www.instagram.com/optimus.estate?igsh=MTEydXZhZnJlNzRzZg==" target="_blank">Instagram Optimus Estate</a></div>
+    </div>
+  </div>
+  <div class="f-bottom"><div class="wrap"><span>© 2026 OPTIMUS ESTATE</span><a href="form.html">Стать партнёром</a></div></div>
+</footer>
+
+</body>
+</html>
