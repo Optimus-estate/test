@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>OPTIMUS ESTATE — Стать партнёром</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#FAF7F2;color:#1a1a1a;min-height:100vh;display:flex;flex-direction:column;align-items:center}
+body > *{width:100%;max-width:1100px}
+a{color:inherit}
+
+.top{background:linear-gradient(90deg,rgba(12,22,42,.9),rgba(12,22,42,.7)),url('hero-bg.jpg') center/cover no-repeat;padding:24px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.top-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.top-logo img{height:72px;width:auto}
+.top-logo span{font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:#fff}
+.back{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;text-decoration:none;border:1.5px solid rgba(255,255,255,.7);padding:10px 16px;border-radius:2px}
+.back:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+.form-section{flex:1;padding:48px 20px 56px}
+.form-wrap{max-width:600px;margin:0 auto}
+.form-badge{display:table;margin:0 auto 14px;background:#C9A24B;color:#1C2B4B;font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;padding:6px 12px;border-radius:2px}
+.form-headline{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;text-transform:uppercase;color:#1C2B4B;text-align:center;line-height:1.1}
+.form-gold-line{width:50px;height:2px;background:#C9A24B;margin:14px auto 16px}
+.form-sub{font-size:15px;color:#4a5263;text-align:center;line-height:1.6;margin-bottom:28px}
+.form-card{background:#fff;border:1px solid #E3DACB;border-radius:4px;padding:28px}
+.form-field{margin-bottom:14px}
+.form-field label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#1C2B4B;margin-bottom:6px}
+.form-field input,.form-field textarea{width:100%;padding:12px 14px;border:1px solid #DDD8D0;background:#fff;font-family:'Inter',sans-serif;font-size:15px;color:#1a1a1a;outline:none;border-radius:2px;-webkit-appearance:none;transition:border-color .2s}
+.form-field input:focus,.form-field textarea:focus{border-color:#C9A24B}
+.form-field textarea{resize:vertical;min-height:96px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-submit{width:100%;background:#C9A24B;color:#1C2B4B;font-family:'Inter',sans-serif;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;padding:16px;border:none;cursor:pointer;margin-top:6px;border-radius:2px;transition:background .2s}
+.form-submit:hover{background:#b8913a}
+.form-submit:disabled{opacity:.6;cursor:default}
+.form-note{font-size:12px;color:#6b6f7a;text-align:center;margin-top:14px;line-height:1.55}
+.form-success{display:none;text-align:center;padding:40px 24px;background:#fff;border:1px solid #C9A24B;border-radius:4px}
+.form-success-icon{width:56px;height:56px;border-radius:50%;background:#1C2B4B;color:#E2C27E;font-size:26px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.form-success-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:#1C2B4B;margin-bottom:10px}
+.form-success-text{font-size:15px;color:#4a5263;line-height:1.6;margin-bottom:22px}
+.btn{display:inline-flex;background:#1C2B4B;color:#fff;font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:13px 20px;text-decoration:none;border-radius:2px}
+
+.footer{background:#1C2B4B;padding:22px 32px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.footer a{font-size:14px;color:#E2C27E;text-decoration:none;font-weight:600}
+.footer span{font-size:12px;color:#AEB6C8}
+
+@media(max-width:600px){
+  .top{padding:18px 16px}
+  .top-logo img{height:56px}
+  .form-section{padding:32px 16px 40px}
+  .form-headline{font-size:28px}
+  .form-card{padding:20px 16px}
+  .form-row{grid-template-columns:1fr;gap:0}
+  .form-field input,.form-field textarea{font-size:16px}
+  .footer{padding:18px 16px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a href="index.html" class="top-logo"><img src="logo-white.png" alt="OPTIMUS ESTATE"/><span>Инвестиционная<br>компания</span></a>
+  <a href="index.html" class="back">← К объектам</a>
+</header>
+
+<section class="form-section">
+  <div class="form-wrap">
+    <div class="form-badge">Только для партнёров</div>
+    <h1 class="form-headline">Стать партнёром</h1>
+    <div class="form-gold-line"></div>
+    <p class="form-sub">Оставьте контакты — пришлём актуальные прайсы, презентации и условия сотрудничества, а также будем сообщать о новых предложениях.</p>
+
+    <div class="form-card" id="formBlock">
+      <div class="form-row">
+        <div class="form-field"><label for="f-name">Ваше имя *</label><input type="text" id="f-name" placeholder="Иван Иванов" autocomplete="name"/></div>
+        <div class="form-field"><label for="f-company">Агентство / Компания *</label><input type="text" id="f-company" placeholder="Название агентства" autocomplete="organization"/></div>
+      </div>
+      <div class="form-row">
+        <div class="form-field"><label for="f-email">Email *</label><input type="email" id="f-email" placeholder="ivan@agency.com" autocomplete="email" inputmode="email"/></div>
+        <div class="form-field"><label for="f-phone">Телефон / WhatsApp / Telegram</label><input type="tel" id="f-phone" placeholder="+359 …" autocomplete="tel" inputmode="tel"/></div>
+      </div>
+      <div class="form-field"><label for="f-comment">Комментарий</label><textarea id="f-comment" placeholder="Расскажите о ваших клиентах или задайте вопрос"></textarea></div>
+      <button class="form-submit" onclick="submitForm()">Отправить запрос →</button>
+      <p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.<br>Мы свяжемся с вами в течение рабочего дня.</p>
+    </div>
+
+    <div class="form-success" id="formSuccess">
+      <div class="form-success-icon">✓</div>
+      <div class="form-success-title">Запрос отправлен!</div>
+      <div class="form-success-text">Мы получили вашу заявку и свяжемся с вами в течение рабочего дня. Проверьте email — там будут прайсы и условия сотрудничества.</div>
+      <a href="index.html" class="btn">← Вернуться к объектам</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <a href="mailto:optimusbg@mail.ru">optimusbg@mail.ru</a>
+  <span>© Optimus Estate — эксклюзивная недвижимость на побережье Болгарии</span>
+</footer>
+
+<script>
+async function submitForm(){
+  var name=document.getElementById('f-name').value.trim();
+  var company=document.getElementById('f-company').value.trim();
+  var email=document.getElementById('f-email').value.trim();
+  if(!name||!company||!email){alert('Пожалуйста, заполните обязательные поля: имя, агентство и email.');return;}
+  var phone=document.getElementById('f-phone').value.trim();
+  var comment=document.getElementById('f-comment').value.trim();
+  var btn=document.querySelector('.form-submit');
+  var txt=btn.textContent;
+  btn.disabled=true;btn.textContent='Отправка...';
+  try{
+    const res=await fetch('https://hook.eu1.make.com/vf7uazlhhd35js8xf3p72676dhhsjnzo',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({name:name,company:company,email:email,phone:phone,comment:comment,language:'ru',source:'partner-page'})
+    });
+    if(!res.ok)throw new Error('Webhook error: '+res.status);
+    document.getElementById('formBlock').style.display='none';
+    document.getElementById('formSuccess').style.display='block';
+  }catch(err){
+    console.error(err);
+    alert('Не удалось отправить заявку. Попробуйте ещё раз или напишите нам на optimusbg@mail.ru');
+    btn.disabled=false;btn.textContent=txt;
+  }
+}
+</script>
+
+</body>
+</html>
