@@ -18,14 +18,6 @@ img{display:block;max-width:100%}
 .h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,46px);font-weight:600;color:#1C2B4B;line-height:1.05;margin-top:8px}
 .ico{stroke:#C9A24B;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 
-/* NAV */
-.nav{position:sticky;top:0;z-index:20;background:rgba(250,247,242,.96);backdrop-filter:blur(6px);border-bottom:1px solid #EDE7DC}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:76px}
-.nav-logo img{height:56px;width:auto}
-.nav-links{display:flex;gap:28px}
-.nav-links a{font-size:14px;font-weight:500;color:#1C2B4B}
-.nav-links a:hover{color:#A8813F}
-
 /* BUTTONS */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:600;padding:14px 22px;border-radius:6px;border:1.5px solid transparent;transition:background .15s,color .15s,border-color .15s;white-space:nowrap}
 .btn-gold{background:#C9A24B;color:#1C2B4B;border-color:#C9A24B}
@@ -39,13 +31,20 @@ img{display:block;max-width:100%}
 .btn-sm{font-size:13px;padding:11px 14px}
 
 /* HERO */
-.hero{display:grid;grid-template-columns:1fr 1fr;min-height:520px;max-width:1440px;margin:0 auto}
-.hero-text{padding:64px 48px 64px max(32px,calc((100vw - 1200px)/2 + 32px));display:flex;flex-direction:column;justify-content:center}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5vw,64px);font-weight:600;line-height:1;color:#1C2B4B;margin-top:16px}
-.hero p{font-size:17px;line-height:1.6;color:#3d4556;margin-top:22px;max-width:480px}
-.hero p b{color:#1C2B4B}
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-.hero-img{background:url('hero-bg.jpg') center/cover no-repeat;border-bottom-left-radius:4px;min-height:320px}
+.hero{background:linear-gradient(90deg,rgba(12,22,42,.88) 0%,rgba(12,22,42,.6) 45%,rgba(12,22,42,0) 75%),url('hero-bg.jpg') center/cover no-repeat;color:#fff}
+.hero-in{min-height:420px;padding-top:28px;padding-bottom:40px;display:flex;flex-direction:column}
+.hero-top{display:flex;align-items:center;gap:12px}
+.hero-logo{height:110px;width:auto}
+.hero-logo-sub{font-size:12px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:#fff}
+.hero-badge{display:inline-flex;align-self:flex-start;margin-top:28px;background:#C9A24B;color:#1C2B4B;font-size:12px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;padding:7px 12px;border-radius:2px}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4.4vw,44px);font-weight:700;color:#fff;margin-top:14px;line-height:1.05;max-width:600px;text-transform:uppercase}
+.hero-p{margin-top:16px;max-width:520px;font-size:15px;line-height:1.6;color:#fff}
+.hero-p b{color:#E2C27E;font-weight:700}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.btn-hero{display:inline-flex;align-items:center;gap:8px;background:#C9A24B;color:#1C2B4B;font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:13px 20px;text-decoration:none;border-radius:2px}
+.btn-hero:hover{background:#b8913a}
+.btn-hero.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.7)}
+.btn-hero.ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
 
 /* USP */
 .usp{background:#fff;border-top:1px solid #EDE7DC;border-bottom:1px solid #EDE7DC}
@@ -141,7 +140,6 @@ img{display:block;max-width:100%}
 .f-bottom .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:18px;padding-bottom:18px;font-size:12px;color:#6b6f7a}
 
 @media(max-width:1024px){
-  .nav-links{display:none}
   .usp .wrap{grid-template-columns:1fr 1fr}
   .usp-item{border-left:none;padding-left:0}
   .grid{grid-template-columns:1fr 1fr}
@@ -154,12 +152,9 @@ img{display:block;max-width:100%}
 }
 @media(max-width:720px){
   .wrap{padding:0 18px}
-  .nav .wrap{height:64px}
-  .nav-logo img{height:44px}
-  .nav .btn{padding:10px 14px;font-size:13px}
-  .hero{grid-template-columns:1fr}
-  .hero-text{padding:40px 18px 32px}
-  .hero-img{min-height:260px;border-radius:0}
+  .hero{background:linear-gradient(rgba(12,22,42,.72),rgba(12,22,42,.72)),url('hero-bg.jpg') center/cover no-repeat}
+  .hero-in{padding-top:22px;padding-bottom:30px;min-height:auto}
+  .hero-logo{height:80px}
   .usp .wrap{grid-template-columns:1fr}
   .usp-item{padding:16px 0;border-top:1px solid #EDE7DC}
   .usp-item:first-child{border-top:none}
@@ -173,24 +168,20 @@ img{display:block;max-width:100%}
 </head>
 <body>
 
-<header class="nav">
-  <div class="wrap">
-    <a href="#" class="nav-logo"><img src="logo.png" alt="OPTIMUS ESTATE"/></a>
-    <a href="form.html" class="btn btn-gold">Стать партнёром</a>
-  </div>
-</header>
-
 <section class="hero">
-  <div class="hero-text">
-    <div class="eyebrow">Только для партнёров · Эксклюзивные объекты</div>
-    <h1>Эксклюзивная недвижимость на побережье Болгарии</h1>
-    <p>Наши объекты доступны только через партнёров и не публикуются на открытых площадках (alo.bg и др.). <b>Клиент закрепляется за вами при первом осмотре.</b></p>
+  <div class="wrap hero-in">
+    <div class="hero-top">
+      <img src="logo-white.png" alt="OPTIMUS ESTATE" class="hero-logo"/>
+      <div class="hero-logo-sub">Инвестиционная<br>компания</div>
+    </div>
+    <div class="hero-badge">Только для партнёров</div>
+    <h1 class="hero-title">Эксклюзивная недвижимость на побережье Болгарии</h1>
+    <p class="hero-p">Наши объекты не публикуются на открытых площадках (alo.bg и др.) — это право остаётся за вами. <b>Клиент закрепляется за вами при первом осмотре.</b></p>
     <div class="hero-actions">
-      <a href="#objects" class="btn btn-navy">Смотреть комплексы →</a>
-      <a href="form.html" class="btn btn-line">Стать партнёром</a>
+      <a href="#objects" class="btn-hero">Смотреть объекты</a>
+      <a href="form.html" class="btn-hero ghost">Стать партнёром</a>
     </div>
   </div>
-  <div class="hero-img" role="img" aria-label="Побережье Болгарии"></div>
 </section>
 
 <section class="usp">
