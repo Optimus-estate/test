@@ -59,6 +59,12 @@ img{display:block;max-width:100%}
 .section{padding:72px 0 0}
 .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:28px}
 .link-arrow{font-size:14px;font-weight:600;color:#1C2B4B;border-bottom:1.5px solid #C9A24B;padding-bottom:3px}
+.btn-price{display:inline-flex;align-items:center;gap:10px;background:#1C2B4B;border:1.5px solid #C9A24B;border-radius:999px;padding:11px 20px 11px 16px;text-decoration:none;flex-shrink:0}
+.btn-price-icon{width:16px;height:16px}
+.btn-price-divider{width:1px;height:18px;background:rgba(201,162,75,0.5)}
+.btn-price-text{font-size:11px;font-weight:800;letter-spacing:0.9px;text-transform:uppercase;color:#fff}
+.btn-price-arrow{width:14px;height:14px;transition:transform .15s ease}
+.btn-price:hover .btn-price-arrow{transform:translateX(3px)}
 
 /* CARDS */
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -210,7 +216,12 @@ img{display:block;max-width:100%}
   <div class="wrap">
     <div class="section-head">
       <div><div class="eyebrow">Наши объекты</div><h2 class="h2">Комплексы и объекты</h2></div>
-      <a href="https://airtable.com/app4flQF8p47DvF7v/shr9xS2MU8pricfTu" target="_blank" class="link-arrow">Общий прайс →</a>
+      <a href="https://airtable.com/app4flQF8p47DvF7v/shr9xS2MU8pricfTu" target="_blank" class="btn-price">
+        <svg class="btn-price-icon" viewBox="0 0 24 24" fill="none" stroke="#C9A24B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg>
+        <span class="btn-price-divider"></span>
+        <span class="btn-price-text">Общий прайс</span>
+        <svg class="btn-price-arrow" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
     </div>
     <div class="grid">
 
