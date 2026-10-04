@@ -20,7 +20,7 @@ ul{list-style:none}
 .ico{stroke:#C9A24B;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 
 /* HERO */
-.hero{background:linear-gradient(180deg,rgba(14,24,48,.82) 0%,rgba(14,24,48,.6) 100%),url('hero-bg.jpg') center/cover no-repeat;color:#fff}
+.hero{background:linear-gradient(180deg,rgba(14,24,48,.82) 0%,rgba(14,24,48,.6) 100%),url('hero-beach.jpg') center/cover no-repeat;color:#fff}
 .hero-in{padding-top:36px;padding-bottom:56px}
 .hero-logo{height:72px;width:auto}
 .badge-h{display:inline-block;margin-top:56px;background:#C9A24B;color:#1C2B4B;font-size:10px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;padding:6px 10px;border-radius:2px}
@@ -50,7 +50,8 @@ ul{list-style:none}
 /* CARDS */
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(28,43,75,.08),0 6px 18px rgba(28,43,75,.05);display:flex;flex-direction:column}
-.ph{height:150px;display:flex;align-items:center;justify-content:center;font-size:11px;color:#8a8a8a}
+.ph{height:176px;overflow:hidden;background:#EEE9DF}
+.ph img{width:100%;height:100%;object-fit:cover}
 .cb{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
 .ct{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
 .ct h3{font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:700;color:#1C2B4B;line-height:1.1}
@@ -196,7 +197,7 @@ ul{list-style:none}
     <div class="grid">
 
     <article class="card apollon">
-      <div class="ph" style="background:#EBD9C8">Фото — Аполлон</div>
+      <div class="ph"><img src="apollon.jpg" alt="Аполлон" loading="lazy"/></div>
       <div class="cb">
         <div class="ct"><div><h3>Аполлон</h3><div class="loc"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Равда, Несебр</div></div><span class="badge top">Комиссия сверху</span></div>
         <ul><li>Семейный комплекс у моря, тихий район</li><li>Отличный сезонный арендный спрос</li><li>Студии, 1, 2 и 3 спальни</li></ul>
@@ -206,7 +207,7 @@ ul{list-style:none}
       </div>
     </article>
     <article class="card tarsis">
-      <div class="ph" style="background:#E8DFD0">Фото — Тарсис</div>
+      <div class="ph"><img src="tarsis-hero2.png" alt="Тарсис" loading="lazy"/></div>
       <div class="cb">
         <div class="ct"><div><h3>Тарсис</h3><div class="loc"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Солнечный берег</div></div><span class="badge top">Комиссия сверху</span></div>
         <ul><li>Курортный комплекс с высокой доходностью</li><li>Бассейны, рестораны, SPA, фитнес</li><li>Студии, 1 и 2 спальни</li></ul>
@@ -216,7 +217,7 @@ ul{list-style:none}
       </div>
     </article>
     <article class="card belle">
-      <div class="ph" style="background:#DCE9F5">Фото — Belle Air</div>
+      <div class="ph"><img src="belleair.jpg" alt="Belle Air" loading="lazy"/></div>
       <div class="cb">
         <div class="ct"><div><h3>Belle Air</h3><div class="loc"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Святой Влас</div></div><span class="badge in">10% в цене</span></div>
         <ul><li>Премиальный образ жизни</li><li>Качественное строительство</li><li>Спокойный и престижный район</li></ul>
@@ -226,7 +227,7 @@ ul{list-style:none}
       </div>
     </article>
     <article class="card pom">
-      <div class="ph" style="background:#D5E4DE">Фото — Pomorie Luxury Village</div>
+      <div class="ph"><img src="pomorie.png" alt="Pomorie Luxury Village" loading="lazy"/></div>
       <div class="cb">
         <div class="ct"><div><h3>Pomorie Luxury Village</h3><div class="loc"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Поморие</div></div><span class="badge in">3% в цене + сверху</span></div>
         <ul><li>Премиальные дома с собственными участками</li><li>Тихий и престижный район</li><li>Для круглогодичного проживания</li></ul>
@@ -236,7 +237,7 @@ ul{list-style:none}
       </div>
     </article>
     <article class="card central">
-      <div class="ph" style="background:#D9E5DC">Фото — Central Park</div>
+      <div class="ph"><img src="centralpark.jpg" alt="Central Park" loading="lazy"/></div>
       <div class="cb">
         <div class="ct"><div><h3>Central Park</h3><div class="loc"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Бургас</div></div><span class="badge top">Комиссия сверху</span></div>
         <ul><li>Современный комплекс в развивающемся районе</li><li>Комфорт для жизни круглый год</li><li>Развитая инфраструктура рядом</li></ul>
@@ -246,7 +247,7 @@ ul{list-style:none}
       </div>
     </article>
     <article class="card secm">
-      <div class="ph" style="background:#E6DFCF">Фото — Вторичный рынок</div>
+      <div class="ph"><img src="secondary.jpg" alt="Вторичный рынок" loading="lazy"/></div>
       <div class="cb">
         <div class="ct"><div><h3>Вторичный рынок</h3><div class="loc"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Разные локации побережья</div></div><span class="badge top">Комиссия сверху</span></div>
         <ul><li>Готовые апартаменты в курортных локациях</li><li>Подходит для отдыха и аренды</li><li>Студии и апартаменты разных форматов</li></ul>
